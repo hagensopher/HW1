@@ -33,6 +33,7 @@ class Circle extends Shape {
     }
 
     double Area(){
+        System.out.println("The radius is r: "+r);
         return Math.PI * Math.pow(r, 2);
     }
 

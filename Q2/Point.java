@@ -2,10 +2,11 @@
 
 public class Point {
 
-    int x=0;
-    int y=0;
+    double x=0;
+    double y=0;
 
-    Point(int X, int Y){
-
+    Point(double X, double Y){
+        this.x = X;
+        this.y = Y;
     }
 }
