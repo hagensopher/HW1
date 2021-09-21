@@ -1,5 +1,5 @@
 //package Q2;
-
+import java.util.Arrays;
 
 
 public class Main{
@@ -36,5 +36,12 @@ public class Main{
         }
         
       System.out.printf("The total area for the %d objects is %1.2f units squared. \n",shape.length, AreaCalculator.calculate(shape));
+
+        Arrays.sort(shape);
+        int count =0;
+        for(Shape s :shape){
+            System.out.println(++count + ")"+ s+"\t\t area="+s.Area());
+        }
+
     }
 }
