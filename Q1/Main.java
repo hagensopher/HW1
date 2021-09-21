@@ -5,9 +5,17 @@ public class Main {
         int command;
         AnimalShelter Humane = new AnimalShelter();
         Scanner input = new Scanner(System.in);
-        //String input;
+        
         if(args.length > 0){
-            
+            for(int i=0;i<args.length;i++){
+                String[] temp = args[i].split(" ");
+                if(args[i].charAt(0) == 'c'){
+                    Humane.addAnimal(new Cat(temp[1]));
+                }
+                else{
+                    Humane.addAnimal(new Dog(temp[1]));
+                }
+            }
         }
         
         while(true){

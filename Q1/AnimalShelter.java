@@ -16,29 +16,33 @@ public class AnimalShelter {
     public void adoptCat(){
         for(int i =0;i<animals.size();i++){
             if(animals.get(i) instanceof Cat){
-                System.out.println("You adopted "+animals.get(i).getName());
+                System.out.println("You adopted "+animals.get(i).getName()+"\n");
                 animals.remove(i);
-                break;
+                return;
             }
+            
         }
+        System.out.println("There are no more Cats!\n");
 
     }
     
     public void adoptDog(){
         for(int i =0;i<animals.size();i++){
             if(animals.get(i) instanceof Dog){
-                System.out.println("You adopted "+animals.get(i).getName());
+                System.out.println("You adopted "+animals.get(i).getName()+"\n");
                 animals.remove(i);
-                break;
+                return;
             }
+           
         }
+        System.out.println("There are no more Dogs!\n");
     }
 
     public void remaningAnimals(){
        //for loop of going through each animal in the order
-       for(int i =0;i<animals.size();i++){     
-            System.out.println("You adopted "+animals.get(i).getName());
-            System.out.println("Order:"+ i);
+       for(int i =0;i<animals.size();i++){ 
+            System.out.println("Order:"+ i);    
+            System.out.println("Animal: "+animals.get(i).getName()+"\n");
         }
     }
 
@@ -46,8 +50,8 @@ public class AnimalShelter {
         //for loop of going through each animal in the order
         for(int i =0;i<animals.size();i++){
             if(animals.get(i) instanceof Dog){
-                System.out.println("You adopted "+animals.get(i).getName());
                 System.out.println("Order:"+ i);
+                System.out.println("Dog: "+animals.get(i).getName()+"\n"); 
             }
         }
     }
@@ -56,9 +60,8 @@ public class AnimalShelter {
         //for loop of going through each animal in the order
         for(int i =0;i<animals.size();i++){
             if(animals.get(i) instanceof Cat){
-                System.out.println("You adopted "+animals.get(i).getName());
                 System.out.println("Order:"+ i);
-                
+                System.out.println("Cat: "+animals.get(i).getName()+"\n");
             }
         }
     }
