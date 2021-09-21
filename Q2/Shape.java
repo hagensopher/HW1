@@ -18,7 +18,7 @@ class Rectangle extends Shape{
     
     double Area(){
         double height = Math.abs(p1.x-p2.x);
-        double len = Math.abs(p1.y-p1.x);
+        double len = Math.abs(p1.y-p2.y);
         return height*len;
     }
 
@@ -50,6 +50,8 @@ class Triangle extends Shape{
     }
 
     double Area(){
-        return .5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x));
+        System.out.println(.5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x)));
+        return Math.abs(.5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x)));
+        
     }
 }
