@@ -13,19 +13,13 @@ public final class Node<T extends Shape> implements Iterable<T> {
 
 
 class ShapeList<T extends Shape> implements Iterable<T> {
-    Node<T> node;
-
+    //Node<T> node;
+    Iterable<T> node; //take this using the for each loop to do the work
     public ShapeList(){} //make an empty list
     public ShapeList(Iterable<T> input){
+        node = input;
         
-        for( T e : input){
-            Node<T> prev = new Node<T>(e, null); //how do i know hwat next is
-            this.node.v =e;
-            this.node.next = input.iterator().next();
-            System.out.println(e);
-            
-            
-        }
+        
     } //make a list of iterables 
     
     @Override
@@ -34,25 +28,24 @@ class ShapeList<T extends Shape> implements Iterable<T> {
        return node.iterator();
     }
 
-    //  public ShapeList<T> reverse(){ //reverse all the list in a linked list
-    //     ShapeList<T> reverse = new ShapeList<T>();
-    //     Node<T> prev = null;
-    //     T next = null;
-    //     while(node.iterator().hasNext()){
-    //         next = reverse.iterator().next();
-    //         node.next = prev;
-    //         prev = node;
-    //         node = next;
-    //     }
-    //     return 
-    // } 
-
-    //  public String toString(){
-
-    // }
+    public ShapeList<T> reverse(){ //reverse all the list in a linked list
+        ShapeList<T> reverse = new ShapeList<T>(node);
+        
+        Iterable<T> prev = null;
+        Iterable<T> next = null;
+        while(reverse.iterator().hasNext()){
+            next = reverse.node; //set next to currents next
+            reverse.node = prev; //set currents next to prev (null for head)
+            prev = reverse.node; //set prev to current
+            reverse.node = next; //move current up
+        }
+        return reverse;
+    } 
+    
+     public String toString(){
+        return "Hello";
+    }
 }
-
-
 
 class NodeIterator<T extends Shape> implements Iterator<T>{
     Node<T> currentNode;
@@ -63,10 +56,15 @@ class NodeIterator<T extends Shape> implements Iterator<T>{
     }
 
     public T next() { //is this suppseod to be type Node<T> and not <T>
+        
+        if(!hasNext()){
+            throw new NoSuchElementException();
+        }
         T val = currentNode.v;
         currentNode = currentNode.next;
         System.out.println("out");
         return val;
+        
     }
 
     public void printList(){

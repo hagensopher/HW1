@@ -49,9 +49,10 @@ public class Main{
 
         ShapeList<Shape> emptyShapes = new ShapeList<Shape>();
         ShapeList<Circle> someCircles = new ShapeList<Circle>(Arrays.asList(c1, d1, e1));
-        someCircles.iterator().next();
+        
 
         System.out.println("emptyShapes = " + emptyShapes.toString());
+        System.out.println("someCircles = " + someCircles);
         //System.out.println("reversed emptyShapes = " + emptyShapes.reverse());
 
 
