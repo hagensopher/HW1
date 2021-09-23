@@ -40,7 +40,7 @@ class Circle extends Shape {
     }
 
     double Area(){
-        System.out.println("The radius is r: "+r);
+        //System.out.println("The radius is r: "+r);
         return Math.PI * Math.pow(r, 2);
     }
     Point position(){
@@ -63,7 +63,7 @@ class Triangle extends Shape{
     }
 
     double Area(){
-        System.out.println(.5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x)));
+        //System.out.println(.5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x)));
         return Math.abs(.5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x)));
         
     }

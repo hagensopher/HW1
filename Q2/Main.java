@@ -36,22 +36,23 @@ public class Main{
       System.out.printf("The total area for the %d objects is %1.2f units squared. \n",shape.length, AreaCalculator.calculate(shape));
 
         //Arrays.sort(shape);
-        int count =0;
-        for(Shape s :shape){
-            System.out.println(++count + ")"+ s+"\t\t area="+s.Area());
-        }
+        // int count =0;
+        // for(Shape s :shape){
+        //     System.out.println(++count + ")"+ s+"\t\t area="+s.Area());
+        // }
 
         Circle c1 = new Circle(new Point(1.0,1.0),1.0);
-        Circle d1 = new Circle(new Point(3.0,3.0),3.0);
-        Circle e1 = new Circle(new Point(2.0,2.0),2.0);
+        Circle d1 = new Circle(new Point(2.0,2.0),2.0);
+        Circle e1 = new Circle(new Point(3.0,3.0),3.0);
+        Circle f1 = new Circle(new Point(4.0,4.0),4.0);
 
         ShapeList<Shape> emptyShapes = new ShapeList<Shape>();
-        ShapeList<Circle> someCircles = new ShapeList<Circle>(Arrays.asList(c1, d1, e1));
+        ShapeList<Circle> someCircles = new ShapeList<Circle>(Arrays.asList(c1, d1, e1,f1));
         
 
         System.out.println("emptyShapes = " + emptyShapes.toString());
         System.out.println("someCircles = " + someCircles);
-        System.out.println("reversed someCircles = " + someCircles.reverse());
+       // System.out.println("reversed someCircles = " + someCircles.reverse());
 
 
     }
