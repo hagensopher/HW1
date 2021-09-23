@@ -13,11 +13,14 @@ public final class Node<T extends Shape> implements Iterable<T> {
 
 
 class ShapeList<T extends Shape> implements Iterable<T> {
-    //Node<T> node;
-    Iterable<T> node; //take this using the for each loop to do the work
+    Node<T> node;
+    //Iterable<T> node; //take this using the for each loop to do the work
+    //
     public ShapeList(){} //make an empty list
     public ShapeList(Iterable<T> input){
-        node = input;
+        //call codes in each for loop
+        //makes a new node
+        //connects the node
         
         
     } //make a list of iterables 
@@ -31,19 +34,28 @@ class ShapeList<T extends Shape> implements Iterable<T> {
     public ShapeList<T> reverse(){ //reverse all the list in a linked list
         ShapeList<T> reverse = new ShapeList<T>(node);
         
-        Iterable<T> prev = null;
-        Iterable<T> next = null;
-        while(reverse.iterator().hasNext()){
-            next = reverse.node; //set next to currents next
-            reverse.node = prev; //set currents next to prev (null for head)
-            prev = reverse.node; //set prev to current
-            reverse.node = next; //move current up
+        //make a stack.
+        Stack<T> stack = new Stack<>();
+        for(T e: node){
+            stack.push(e);
+        } 
+        for(T e : stack){
+            T thing = stack.pop();
+            reverse = ;
         }
         return reverse;
     } 
     
      public String toString(){
-        return "Hello";
+        String total = "{[";
+        if(node == null){
+            return "[]";
+        }
+        for( T e : node){
+            
+            total = total + e;
+        }
+        return total;
     }
 }
 
@@ -52,7 +64,7 @@ class NodeIterator<T extends Shape> implements Iterator<T>{
     NodeIterator(Node<T> n){ this.currentNode = n;}
 
     public boolean hasNext(){
-        return currentNode != null;
+        return currentNode.next != null;
     }
 
     public T next() { //is this suppseod to be type Node<T> and not <T>

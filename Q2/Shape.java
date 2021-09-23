@@ -5,6 +5,7 @@ abstract class Shape{
     Shape(){}
 
     abstract double Area();
+    abstract Point position();
 
 }
 
@@ -21,6 +22,12 @@ class Rectangle extends Shape{
         double len = Math.abs(p1.y-p2.y);
         return height*len;
     }
+    Point position(){
+        return p1;
+    }
+    public String toString(){
+        return "Rectangle (" +p1.x+"-"+p1.y+")-("+p2.x+"-"+p2.y+")\t area = "+this.Area();
+    }
 
 }
 
@@ -35,6 +42,12 @@ class Circle extends Shape {
     double Area(){
         System.out.println("The radius is r: "+r);
         return Math.PI * Math.pow(r, 2);
+    }
+    Point position(){
+        return p1;
+    }
+    public String toString(){
+        return "Circle (" +p1.x+"-"+p1.y+") radius = "+r+") \t area = "+this.Area();
     }
 
 }
@@ -53,5 +66,11 @@ class Triangle extends Shape{
         System.out.println(.5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x)));
         return Math.abs(.5 * (((p2.y - p3.y)*p1.x) + ((p3.y-p1.y)*p2.x) + ((p1.y-p2.y)*p3.x)));
         
+    }
+    Point position(){
+        return p1;
+    }
+    public String toString(){
+        return "Triangle (" +p1.x+"-"+p1.y+")-("+p2.x+"-"+p2.y+")-("+p2.x+"-"+p2.y+")\t area = "+this.Area();
     }
 }

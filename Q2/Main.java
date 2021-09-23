@@ -16,9 +16,7 @@ public class Main{
         for(int i=0;i<args.length;i++){
             char ch = args[i].charAt(0);
             String[] temp = args[i].split(" ");
-            // for(int j =0;j<temp.length;j++){
-            //     System.out.println(temp[j]);
-            // }
+           
             if(ch == 'r'){
                 shape[i] = new Rectangle( new Point(Double.parseDouble(temp[1]),Double.parseDouble(temp[2])),
                                           new Point(Double.parseDouble(temp[3]),Double.parseDouble(temp[4])) );
@@ -37,11 +35,11 @@ public class Main{
         
       System.out.printf("The total area for the %d objects is %1.2f units squared. \n",shape.length, AreaCalculator.calculate(shape));
 
-        // Arrays.sort(shape);
-        // int count =0;
-        // for(Shape s :shape){
-        //     System.out.println(++count + ")"+ s+"\t\t area="+s.Area());
-        // }
+        //Arrays.sort(shape);
+        int count =0;
+        for(Shape s :shape){
+            System.out.println(++count + ")"+ s+"\t\t area="+s.Area());
+        }
 
         Circle c1 = new Circle(new Point(1.0,1.0),1.0);
         Circle d1 = new Circle(new Point(3.0,3.0),3.0);
@@ -53,7 +51,7 @@ public class Main{
 
         System.out.println("emptyShapes = " + emptyShapes.toString());
         System.out.println("someCircles = " + someCircles);
-        //System.out.println("reversed emptyShapes = " + emptyShapes.reverse());
+        System.out.println("reversed someCircles = " + someCircles.reverse());
 
 
     }
