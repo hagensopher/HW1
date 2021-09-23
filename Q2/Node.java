@@ -75,14 +75,15 @@ class ShapeList<T extends Shape> implements Iterable<T> {
     } 
     
      public String toString(){
-        String total = "{[";
+        String total = "[";
         if(node == null){
             return "[]";
         }
         for( T e : node){
             
-            total = total + e;
+            total = total +"{"+ e +"},";
         }
+        total = total + "]";
         return total;
     }
 }

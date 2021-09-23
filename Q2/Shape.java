@@ -26,7 +26,7 @@ class Rectangle extends Shape{
         return p1;
     }
     public String toString(){
-        return "Rectangle (" +p1.x+"-"+p1.y+")-("+p2.x+"-"+p2.y+")\t area = "+this.Area();
+        return "Rectangle (" +p1.x+","+p1.y+")-("+p2.x+","+p2.y+")";
     }
 
 }
@@ -47,7 +47,7 @@ class Circle extends Shape {
         return p1;
     }
     public String toString(){
-        return "Circle (" +p1.x+"-"+p1.y+") radius = "+r+") \t area = "+this.Area();
+        return "Circle (" +p1.x+","+p1.y+") radius = "+r;
     }
 
 }
@@ -71,6 +71,6 @@ class Triangle extends Shape{
         return p1;
     }
     public String toString(){
-        return "Triangle (" +p1.x+"-"+p1.y+")-("+p2.x+"-"+p2.y+")-("+p2.x+"-"+p2.y+")\t area = "+this.Area();
+        return "Triangle (" +p1.x+","+p1.y+")-("+p2.x+","+p2.y+")-("+p2.x+","+p2.y+")";
     }
 }
