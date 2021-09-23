@@ -10,9 +10,7 @@ public class Main{
             System.out.println("Please Enter some shapes");
             System.exit(0);
         }
-        // for(int i =0;i<args.length;i++){
-        //     System.out.println(args[i]);
-        // }
+
         for(int i=0;i<args.length;i++){
             char ch = args[i].charAt(0);
             String[] temp = args[i].split(" ");
@@ -49,11 +47,20 @@ public class Main{
         ShapeList<Shape> emptyShapes = new ShapeList<Shape>();
         ShapeList<Circle> someCircles = new ShapeList<Circle>(Arrays.asList(c1, d1, e1));
         
-
-        System.out.println("emptyShapes = " + emptyShapes.toString());
+        
+        System.out.println("emptyShapes = " + emptyShapes);
         System.out.println("someCircles = " + someCircles);
         System.out.println("reversed someCircles = " + someCircles.reverse());
 
+
+        double sumOfXs = 0.0;
+        double sumOfYs = 0.0;
+        for(Circle c : someCircles){
+            sumOfXs += c.position().x;
+            sumOfYs += c.position().y;
+        }
+        System.out.println("Some of Xs = " + sumOfXs);
+        System.out.println("Some of Ys = " + sumOfYs);
 
     }
 }
