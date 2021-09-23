@@ -1,6 +1,8 @@
 //package Q2;
 import java.lang.Math;
 
+
+
 abstract class Shape implements Comparable<Shape>{
     Shape(){}
 
@@ -31,21 +33,29 @@ class Rectangle extends Shape{
     }
     @Override
     public boolean equals(Object obj) {
-        if(this == obj){
-            Rectangle rec = (Rectangle) obj;
-            if(this.p1 == rec.p1 && this.p2 == rec.p2){
+        
+        if(this == obj){  
+            System.out.println("equals");
                 return true;
-            }
         }
-        return false;
+        if(!(obj instanceof Rectangle)){ 
+            System.out.println("not equals");
+            return false;
+        }
+            
+        Rectangle rec = (Rectangle) obj;
+        boolean temp =  p1.equals(rec.p1) && p2.equals(rec.p2);
+        return temp;
+        
     }
 
     @Override
     public int hashCode(){
-        int result = 17;
-        result = 31 * result + p1.hashCode();
-        result = 31 * result + p2.hashCode();
-        return result;
+        
+        int total = 17;
+        total = total + (31 * p1.hashCode());
+        total = total + (31 * p2.hashCode());
+        return total;
     }
     public int compareTo(Shape obj){
         if(this.Area() > obj.Area()){
@@ -60,7 +70,7 @@ class Rectangle extends Shape{
     }
 
 }
-
+//START OF THE CIRCLE CLASS
 class Circle extends Shape {
     Point p1 = new Point(0,0);
     double r =0;
@@ -70,7 +80,6 @@ class Circle extends Shape {
     }
 
     double Area(){
-        //System.out.println("The radius is r: "+r);
         return Math.PI * Math.pow(r, 2);
     }
     Point position(){
@@ -81,20 +90,26 @@ class Circle extends Shape {
     }
     @Override
     public boolean equals(Object obj) {
-        if(this == obj){
-            Circle rec = (Circle) obj;
-            if(this.p1 == rec.p1 && this.r == rec.r){
+        if(this == obj){  
                 return true;
-            }
         }
-        return false;
+        if(!(obj instanceof Circle)){ 
+            return false;
+        }      
+        //what does this do??
+        Circle rec = (Circle) obj;
+        boolean temp =  p1.equals(rec.p1) && r == rec.r;
+        //System.out.println("what is it "+temp);
+        return temp;
+        
     }
+
     @Override
-    public int hashCode(){
-        int result = 17;
-        result = 31 * result + p1.hashCode();
-        result = 31 * result;
-        return result;
+    public int hashCode(){ 
+        int total = 17;
+        total = total + (31 * p1.hashCode());
+        total = total + (int)(31*r);
+        return total;
     }
 
     public int compareTo(Shape obj){
@@ -110,6 +125,8 @@ class Circle extends Shape {
     }
 
 }
+
+//START OF THE TRIANGLE CLASS
 
 class Triangle extends Shape{
     Point p1 = new Point(0,0);
@@ -130,25 +147,34 @@ class Triangle extends Shape{
         return p1;
     }
     public String toString(){
-        return "Triangle (" +p1.x+","+p1.y+")-("+p2.x+","+p2.y+")-("+p2.x+","+p2.y+")";
+        return "Triangle (" +p1.x+","+p1.y+")-("+p2.x+","+p2.y+")-("+p3.x+","+p3.y+")";
     }
     @Override
     public boolean equals(Object obj) {
-        if(this == obj){
-            Triangle rec = (Triangle) obj;
-            if(this.p1 == rec.p1 && this.p2 == rec.p2 && this.p3 == rec.p3){
+        
+        if(this == obj){  
                 return true;
-            }
         }
-        return false;
+        if(!(obj instanceof Triangle)){ 
+            System.out.println("not equals");
+            return false;
+        }
+            
+        //what does this do??
+        Triangle rec = (Triangle) obj;
+        boolean temp =  p1.equals(rec.p1) && p2.equals(rec.p2) && p3.equals(rec.p3);
+        return temp;
+        
     }
+
     @Override
     public int hashCode(){
-        int result = 17;
-        result = 31 * result + p1.hashCode();
-        result = 31 * result + p2.hashCode();
-        result = 31 * result + p3.hashCode();
-        return result;
+        
+        int total = 17;
+        total = total + (31 * p1.hashCode());
+        total = total + (31 * p2.hashCode());
+        total = total + (31 * p3.hashCode());
+        return total;
     }
 
     public int compareTo(Shape obj){

@@ -36,17 +36,45 @@ public class Main{
         Arrays.sort(shape);
         int count =0;
         for(Shape s :shape){
-            System.out.println(++count + ")"+ s+"\t\t area="+s.Area());
+            System.out.println(++count + ")"+ s+"\t\t area="+s.Area()); //prints the sorted list of shapes
         }
 
-        Circle c1 = new Circle(new Point(1.0,1.0),1.0);
+        //USE THESE FOR TESTING HASHCODE
+        Triangle t1 = new Triangle(new Point(1.0, 1.0), new Point(2.0, 2.0),new Point(3.0, 3.0));
+        System.out.println("the object 1 is "+ t1);
+        System.out.println("the hashcode for object 1 is "+ t1.hashCode());
+        Triangle t2 = new Triangle(new Point(1.0, 1.0), new Point(2.0, 2.0),new Point(3.0, 3.0));
+        System.out.println("the object 2 is "+ t2);
+        System.out.println("the hashcode for object 2 is "+ t2.hashCode());
+        System.out.println(t1.equals(t2));
+
+        Rectangle r1 = new Rectangle(new Point(1.0, 1.0), new Point(2.0, 2.0));
+        System.out.println("the object 1 is "+ r1);
+        System.out.println("the hashcode for object 1 is "+ r1.hashCode());
+        Rectangle r2 = new Rectangle(new Point(1.0, 1.0), new Point(2.0, 2.0));
+        System.out.println("the object 2 is "+ r2);
+        System.out.println("the hashcode for object 2 is "+ r2.hashCode());
+        System.out.println(r1.equals(r2));
+
+        Circle c1 = new Circle(new Point(1.0, 1.0), 1.0);
+        System.out.println("the object 1 is "+ c1);
+        System.out.println("the hashcode for object 1 is "+ c1.hashCode());
+        Circle c2 = new Circle(new Point(1.0, 1.0), 1.0);
+        System.out.println("the object 2 is "+ c2);
+        System.out.println("the hashcode for object 2 is "+ c2.hashCode());
+        System.out.println(c1.equals(c2));
+        //END OF Q2 MAIN CODE
+
+
+        //START OF Q3 MAIN CODE
+
+        Circle c01 = new Circle(new Point(1.0,1.0),1.0);
         Circle d1 = new Circle(new Point(1.0,1.0),1.0);
         Circle e1 = new Circle(new Point(3.0,3.0),3.0);
         //Circle f1 = new Circle(new Point(4.0,4.0),4.0);
-        System.out.println("the hashcode for object 1 is "+ c1.hashCode());
-        System.out.println("the hashcode for object 2 is "+ d1.hashCode());
+
         ShapeList<Shape> emptyShapes = new ShapeList<Shape>();
-        ShapeList<Circle> someCircles = new ShapeList<Circle>(Arrays.asList(c1, d1, e1));
+        ShapeList<Circle> someCircles = new ShapeList<Circle>(Arrays.asList(c01, d1, e1));
         
         
         System.out.println("emptyShapes = " + emptyShapes);
