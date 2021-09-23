@@ -32,18 +32,19 @@ public class Main{
         }
         
       System.out.printf("The total area for the %d objects is %1.2f units squared. \n",shape.length, AreaCalculator.calculate(shape));
-
-        //Arrays.sort(shape);
+        
+        Arrays.sort(shape);
         int count =0;
         for(Shape s :shape){
             System.out.println(++count + ")"+ s+"\t\t area="+s.Area());
         }
 
         Circle c1 = new Circle(new Point(1.0,1.0),1.0);
-        Circle d1 = new Circle(new Point(2.0,2.0),2.0);
+        Circle d1 = new Circle(new Point(1.0,1.0),1.0);
         Circle e1 = new Circle(new Point(3.0,3.0),3.0);
         //Circle f1 = new Circle(new Point(4.0,4.0),4.0);
-
+        System.out.println("the hashcode for object 1 is "+ c1.hashCode());
+        System.out.println("the hashcode for object 2 is "+ d1.hashCode());
         ShapeList<Shape> emptyShapes = new ShapeList<Shape>();
         ShapeList<Circle> someCircles = new ShapeList<Circle>(Arrays.asList(c1, d1, e1));
         

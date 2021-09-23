@@ -1,12 +1,13 @@
 //package Q2;
 import java.lang.Math;
 
-abstract class Shape{
+abstract class Shape implements Comparable<Shape>{
     Shape(){}
 
     abstract double Area();
     abstract Point position();
 
+    
 }
 
 class Rectangle extends Shape{
@@ -28,6 +29,35 @@ class Rectangle extends Shape{
     public String toString(){
         return "Rectangle (" +p1.x+","+p1.y+")-("+p2.x+","+p2.y+")";
     }
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            Rectangle rec = (Rectangle) obj;
+            if(this.p1 == rec.p1 && this.p2 == rec.p2){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        int result = 17;
+        result = 31 * result + p1.hashCode();
+        result = 31 * result + p2.hashCode();
+        return result;
+    }
+    public int compareTo(Shape obj){
+        if(this.Area() > obj.Area()){
+            return 1;
+        }
+        else if(this.Area() == obj.Area()){
+            return 0;
+        }
+        else{
+            return -1;
+        }
+    }
 
 }
 
@@ -48,6 +78,35 @@ class Circle extends Shape {
     }
     public String toString(){
         return "Circle (" +p1.x+","+p1.y+") radius = "+r;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            Circle rec = (Circle) obj;
+            if(this.p1 == rec.p1 && this.r == rec.r){
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        int result = 17;
+        result = 31 * result + p1.hashCode();
+        result = 31 * result;
+        return result;
+    }
+
+    public int compareTo(Shape obj){
+        if(this.Area() > obj.Area()){
+            return 1;
+        }
+        else if(this.Area() == obj.Area()){
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 
 }
@@ -72,5 +131,35 @@ class Triangle extends Shape{
     }
     public String toString(){
         return "Triangle (" +p1.x+","+p1.y+")-("+p2.x+","+p2.y+")-("+p2.x+","+p2.y+")";
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            Triangle rec = (Triangle) obj;
+            if(this.p1 == rec.p1 && this.p2 == rec.p2 && this.p3 == rec.p3){
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        int result = 17;
+        result = 31 * result + p1.hashCode();
+        result = 31 * result + p2.hashCode();
+        result = 31 * result + p3.hashCode();
+        return result;
+    }
+
+    public int compareTo(Shape obj){
+        if(this.Area() > obj.Area()){
+            return 1;
+        }
+        else if(this.Area() == obj.Area()){
+            return 0;
+        }
+        else{
+            return -1;
+        }
     }
 }
