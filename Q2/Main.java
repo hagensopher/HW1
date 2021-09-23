@@ -52,7 +52,7 @@ public class Main{
 
         System.out.println("emptyShapes = " + emptyShapes.toString());
         System.out.println("someCircles = " + someCircles);
-       // System.out.println("reversed someCircles = " + someCircles.reverse());
+        System.out.println("reversed someCircles = " + someCircles.reverse());
 
 
     }

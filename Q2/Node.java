@@ -25,7 +25,7 @@ class ShapeList<T extends Shape> implements Iterable<T> {
         int count =0;
         
         for (T e: input){
-            System.out.println("AHHHHH");
+            //System.out.println("AHHHHH");
             if(count ==0){
                 Node<T> temp = new Node<T>(e,null);
                 prev = temp; //the previoues node for linking
@@ -54,18 +54,23 @@ class ShapeList<T extends Shape> implements Iterable<T> {
     }
 
     public ShapeList<T> reverse(){ //reverse all the list in a linked list
-        ShapeList<T> reverse = new ShapeList<T>(node);
+        //ShapeList<T> reverse = new ShapeList<T>(node);
         
         //make a stack.
-        Stack<T> stack = new Stack<>();
-        for(T e: node){
-            stack.push(e);
-            System.out.println(e);
+        Stack<T> stack = new Stack<T>();
+        Stack<T> reversestack = new Stack<T>();
+        for(T e: node){ //inside of node is a shape
+            stack.push(e); //this pushes a shape from the node list
+            //System.out.println(e);
         } 
-        // for(T e : stack){
-        //     T thing = stack.pop();
+        while(!stack.isEmpty()){
+            reversestack.push(stack.pop());
+        }
             
-        // }
+            //System.out.println(e);
+        
+        ShapeList<T> reverse = new ShapeList<T>(reversestack);
+        
         return reverse;
     } 
     
