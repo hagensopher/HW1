@@ -9,10 +9,10 @@ public class Main {
         if(args.length > 0){
             for(int i=0;i<args.length;i++){
                 String[] temp = args[i].split(" ");
-                if(args[i].charAt(0) == 'c'){
+                if(args[i].charAt(0) == 'c'){ //args[i] is a cat
                     Humane.addAnimal(new Cat(temp[1]));
                 }
-                else{
+                else{ //args[i] is a dog
                     Humane.addAnimal(new Dog(temp[1]));
                 }
             }
@@ -33,14 +33,21 @@ public class Main {
         
         command = input.nextInt();
         String name = input.nextLine();
+        String[] inputAnimal = name.split(" ");
         
-
         if(command == 0){
             break;
         }
-        switch(command){
-            case 1: Dog a = new Dog(name);
-                    Humane.addAnimal(a);
+        switch(command){ //basic switch case for interactive command prompt
+            case 1: 
+                if(inputAnimal[1].equals("c")) {
+                    Cat c = new Cat(inputAnimal[2]);
+                    Humane.addAnimal(c);
+                }
+                else if(inputAnimal[1].equals("d")){
+                    Dog d = new Dog(inputAnimal[2]);
+                    Humane.addAnimal(d);
+                } 
                 break;
             case 2: Humane.adopt();
                 break;
@@ -57,7 +64,7 @@ public class Main {
         }
     }
     input.close();
-        //Testing code
+        //TESTING CODE FOR MANUAL ADD AND ADOPT
         // Dog Jeff = new Dog("Jeff");
         
         // Jeff.cry();

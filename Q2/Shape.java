@@ -8,8 +8,6 @@ abstract class Shape implements Comparable<Shape>{
 
     abstract double Area();
     abstract Point position();
-
-    
 }
 
 class Rectangle extends Shape{
@@ -51,7 +49,7 @@ class Rectangle extends Shape{
 
     @Override
     public int hashCode(){
-        
+        //a simple hascode
         int total = 17;
         total = total + (31 * p1.hashCode());
         total = total + (31 * p2.hashCode());
@@ -99,13 +97,13 @@ class Circle extends Shape {
         //what does this do??
         Circle rec = (Circle) obj;
         boolean temp =  p1.equals(rec.p1) && r == rec.r;
-        //System.out.println("what is it "+temp);
         return temp;
         
     }
 
     @Override
     public int hashCode(){ 
+        //a simple hascode
         int total = 17;
         total = total + (31 * p1.hashCode());
         total = total + (int)(31*r);
@@ -113,6 +111,7 @@ class Circle extends Shape {
     }
 
     public int compareTo(Shape obj){
+        //natural ordering check
         if(this.Area() > obj.Area()){
             return 1;
         }
@@ -151,7 +150,7 @@ class Triangle extends Shape{
     }
     @Override
     public boolean equals(Object obj) {
-        
+        //the override equals function with the check if all points are the same then the shape must be the same
         if(this == obj){  
                 return true;
         }
@@ -169,7 +168,7 @@ class Triangle extends Shape{
 
     @Override
     public int hashCode(){
-        
+        //a simple hascode
         int total = 17;
         total = total + (31 * p1.hashCode());
         total = total + (31 * p2.hashCode());
@@ -177,7 +176,7 @@ class Triangle extends Shape{
         return total;
     }
 
-    public int compareTo(Shape obj){
+    public int compareTo(Shape obj){ //checks which area is greater
         if(this.Area() > obj.Area()){
             return 1;
         }
