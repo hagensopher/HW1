@@ -1,6 +1,8 @@
 Hagen Sopher
 I completed the assigment
 
+For Q1 the the command prompt works normally. When adding an animal in the interative prompt use form
+Ex : 1 c Shrimp   or   1 d Thunder   (no quotes are needed)
 I have pretty large main file for Q2. This is because it contains all the code needed for Q2 and Q3
 There are specified blocks of code in the main that can be commented and uncommented to run the different parts.
 I tried to labled them all to show where one starts and ends.
